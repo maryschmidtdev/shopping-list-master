@@ -21,11 +21,11 @@ $(".shopping-list").append(listItem);
 });
 
 
-$(".shopping-item-delete").click(function() {
-    this.closest('li').remove()
+$(".shopping-list").on("click", ".shopping-item-delete", function(event) {
+    $(this).closest("li").remove();
 });
 
-$(".shopping-item-toggle").click(function() {
+$(".shopping-list").on("click", ".shopping-item-toggle", function(event) {
     const listItem = this.closest('li')
     $(listItem).find(".shopping-item").toggleClass("shopping-item__checked")
 
